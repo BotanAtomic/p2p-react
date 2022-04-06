@@ -4,6 +4,7 @@ const path = require("path");
 const http = require("http");
 const {v4: uuidV4} = require("uuid");
 const bodyParser = require('body-parser');
+const {ExpressPeerServer} = require("peer");
 
 const accountSid = 'ACc0addf6039a85527e84946b8eb8dba5a';
 const authToken = '70c5068b4d78acd5a24a4a9e23ade59c';
@@ -13,10 +14,16 @@ const app = express();
 
 // app.use(express.static(path.join(__dirname, "..", "..", "streams-react/build")));
 //
+
+const server = http.createServer(app);
+
+const peerServer = ExpressPeerServer(server);
+
+app.use("/peerjs", peerServer);
+
 app.use(cors());
 app.use(express.json());
 
-const server = http.createServer(app);
 
 app.get("/api/uuid", (req, res) => {
     res.send({id: uuidV4()});

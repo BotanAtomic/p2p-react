@@ -11,6 +11,6 @@ server.listen(process.env.PORT, "0.0.0.0", () => {
     console.log(`Server is listening on ${process.env.PORT}`);
 });
 
-peerApp.listen(9000, "0.0.0.0", () => {
-    console.log(`Server is listening on 9000`);
-});
+// peerApp.listen(9000, "0.0.0.0", () => {
+//     console.log(`Server is listening on 9000`);
+// });
