@@ -10,6 +10,8 @@ const accountSid = 'ACc0addf6039a85527e84946b8eb8dba5a';
 const authToken = process.env.TWILO_AUTH;
 const twilioClient = require('twilio')(accountSid, authToken);
 
+console.log(authToken)
+
 const app = express();
 
 // app.use(express.static(path.join(__dirname, "..", "..", "streams-react/build")));
