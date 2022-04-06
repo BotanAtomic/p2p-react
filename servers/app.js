@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const {ExpressPeerServer} = require("peer");
 
 const accountSid = 'ACc0addf6039a85527e84946b8eb8dba5a';
-const authToken = '70c5068b4d78acd5a24a4a9e23ade59c';
+const authToken = process.env.TWILO_AUTH;
 const twilioClient = require('twilio')(accountSid, authToken);
 
 const app = express();
